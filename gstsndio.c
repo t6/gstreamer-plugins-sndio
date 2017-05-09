@@ -20,8 +20,6 @@
 #include "sndiosink.h"
 #include "sndiosrc.h"
 
-#include "gst/gst-i18n-plugin.h"
-
 GST_DEBUG_CATEGORY (gst_sndio_debug);
 
 static gboolean

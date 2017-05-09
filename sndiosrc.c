@@ -39,7 +39,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-#include <gst/gst-i18n-plugin.h>
+#define _(x) x
 
 GST_DEBUG_CATEGORY_EXTERN (gst_sndio_debug);
 #define GST_CAT_DEFAULT gst_sndio_debug
