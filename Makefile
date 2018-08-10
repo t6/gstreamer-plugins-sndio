@@ -14,6 +14,8 @@ CFLAGS+=	-DGST_PACKAGE_NAME='"GStreamer Base Plug-ins source release"'
 CFLAGS+=	-DGST_PACKAGE_ORIGIN='"Unknown package origin"'
 CFLAGS+=	-DPACKAGE='"gst-plugins-good"' -DVERSION='"0.10"'
 
+LDFLAGS+=	-Wl,--as-needed
+
 OBJS=	gstsndio.o \
 	sndiosink.o \
 	sndiosrc.o
@@ -21,7 +23,7 @@ OBJS=	gstsndio.o \
 all: libgstsndio.so
 
 libgstsndio.so: ${OBJS}
-	${CC} -shared -o libgstsndio.so ${OBJS} ${GST_LIBS} -lsndio
+	${CC} ${LDFLAGS} -shared -o libgstsndio.so ${OBJS} ${GST_LIBS} -lsndio
 
 clean:
 	rm -f libgstsndio.so ${OBJS}
